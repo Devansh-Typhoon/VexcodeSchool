@@ -324,11 +324,7 @@ void usercontrol(void) {
   Controller1.ButtonR2.pressed(spincam);
 
 while (true) {
-     
-
- 
-
-//commented by 
+     //commented by 
 if(is_flywheel_running==1 or is_flywheel_running==0) {
   //Flywheel Code
   //just trying to stop myself from writing the whole Flywheel_1.velocity(rpm) part
