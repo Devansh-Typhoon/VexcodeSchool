@@ -334,7 +334,7 @@ if(is_flywheel_running==1 or is_flywheel_running==0) {
   //just trying to stop myself from writing the whole Flywheel_1.velocity(rpm) part
   rpm1 = Flywheel_1.velocity(rpm);
   rpm2 = Flywheel_2.velocity(rpm);
-  printf("Details");
+  printf("RPM");
   printf(";");
   printf("%.0f",static_cast<float>(is_flywheel_running));
   printf(";");
