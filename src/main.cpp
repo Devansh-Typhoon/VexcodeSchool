@@ -239,10 +239,6 @@ void autonomous(void) {
   Intake.spinFor(forward,0.2,turns);
   drivebackward(0.15);
 
-
-  // Preparing to shoot
-  rotateleft(0.1);
-
   // Waiting for Ramp up
   wait(1, sec);
 
