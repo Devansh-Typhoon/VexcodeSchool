@@ -436,35 +436,35 @@ if (Controller1.Axis1.position() == 0 and Controller1.Axis2.position()==0)
     Backleft.spin(forward);
     
 
-    // turnleft
-if (Controller1.Axis1.position() < 0) {
+//     // turnleft
+// if (Controller1.Axis1.position() < 0) {
 
-    Frontleft.setVelocity(100, percent);
-    Frontright.setVelocity(100, percent);
-    Backleft.setVelocity(100, percent);
-    Backright.setVelocity(100, percent);
-      Frontleft.spin(reverse);
-      Frontright.spin(reverse);
-      Backleft.spin(fwd);
-      Backright.spin(forward);
+//     Frontleft.setVelocity(100, percent);
+//     Frontright.setVelocity(100, percent);
+//     Backleft.setVelocity(100, percent);
+//     Backright.setVelocity(100, percent);
+//       Frontleft.spin(reverse);
+//       Frontright.spin(reverse);
+//       Backleft.spin(fwd);
+//       Backright.spin(forward);
 
-    }
+//     }
 
-    //turnright
+//     //turnright
 
-    else if (Controller1.Axis1.position() > 0) {
+//     else if (Controller1.Axis1.position() > 0) {
     
-    Frontleft.setVelocity(100, percent);
-    Frontright.setVelocity(100, percent);
-    Backleft.setVelocity(100, percent);
-    Backright.setVelocity(100, percent);
-     Frontleft.spin(fwd);
-     Frontright.spin(forward);
-     Backleft.spin(reverse);
-     Backright.spin(reverse);
-     }
+//     Frontleft.setVelocity(100, percent);
+//     Frontright.setVelocity(100, percent);
+//     Backleft.setVelocity(100, percent);
+//     Backright.setVelocity(100, percent);
+//      Frontleft.spin(fwd);
+//      Frontright.spin(forward);
+//      Backleft.spin(reverse);
+//      Backright.spin(reverse);
+//      }
  
-    };
+//     };
 // wait(20, msec);
   }
    wait(20, msec);
