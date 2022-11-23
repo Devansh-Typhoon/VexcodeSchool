@@ -419,10 +419,10 @@ else {
 
 //DRIVEBASE CODE DO NOT CHANGE
 
-Frontleft.setVelocity((Controller1.Axis4.position() + Controller1.Axis3.position() - Controller1.Axis1.position())/(2*0.68) ,percent);
-Backright.setVelocity((Controller1.Axis4.position() + Controller1.Axis3.position() - Controller1.Axis1.position())/(2*0.68),percent);
-Frontright.setVelocity((Controller1.Axis4.position() - Controller1.Axis3.position() + Controller1.Axis1.position())/(2*0.68),percent);
-Backleft.setVelocity((Controller1.Axis4.position() - Controller1.Axis3.position() + Controller1.Axis1.position())/(2*0.68),percent);
+Frontleft.setVelocity((Controller1.Axis4.position() + Controller1.Axis3.position() + Controller1.Axis1.position())/(2*0.68) ,percent);
+Backright.setVelocity((Controller1.Axis4.position() + Controller1.Axis3.position() + Controller1.Axis1.position())/(2*0.68),percent);
+Frontright.setVelocity((Controller1.Axis4.position() - Controller1.Axis3.position() - Controller1.Axis1.position())/(2*0.68),percent);
+Backleft.setVelocity((Controller1.Axis4.position() - Controller1.Axis3.position() - Controller1.Axis1.position())/(2*0.68),percent);
 Frontright.spin(forward);
 Frontleft.spin(forward);
 Backright.spin(forward);
