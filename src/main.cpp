@@ -315,17 +315,17 @@ void usercontrol(void) {
   // User control code here, inside the loop
 
   
-  //Finally setting the values for the RPM
   Controller1.ButtonR1.pressed(runflywheel);
   Controller1.ButtonR2.pressed(spincam);
 
 while (true) {
-     //commented by 
 if(is_flywheel_running==1 or is_flywheel_running==0) {
   //Flywheel Code
   //just trying to stop myself from writing the whole Flywheel_1.velocity(rpm) part
   rpm1 = Flywheel_1.velocity(rpm);
   rpm2 = Flywheel_2.velocity(rpm);
+
+  // printing RPM values to terminal
   printf("RPM");
   printf(";");
   printf("%.0f",static_cast<float>(is_flywheel_running));
@@ -342,12 +342,14 @@ if(is_flywheel_running==1 or is_flywheel_running==0) {
   float error2 = (target_rpm - rpm2);
 
   if (error1 and error2 != 0) {
+
   // Input Constants here
+
   // Kp is for proportional gain
-  // Ki is integral gain
-  // Kd is derivative gain
   float Kp = 0.175;
+  // Ki is integral gain
   float Ki = 0.00000001;
+  // Kd is derivative gain
   float Kd = 0.3;
 
 
@@ -376,7 +378,7 @@ if(is_flywheel_running==1 or is_flywheel_running==0) {
   LastError1 = error1;
   LastError2 = error2;
 }
-
+// If the RPM is already perfect, then to just stay in the same place
 else if (error1 and error2 == 0) {
   proportional1 = 0;
   proportional2 = 0;
@@ -385,11 +387,12 @@ else if (error1 and error2 == 0) {
   derivative1 = 0;
   derivative2 = 0;
 }
-  
+// Slowing the flywheel down
   if (is_flywheel_running==0 and (rpm1+proportional1 + integral1 + derivative1 <=25 or rpm2+proportional2 + integral2 + derivative2<=25)) {
       Flywheel_1.setVelocity(0,rpm);
       Flywheel_2.setVelocity(0,rpm);
   }
+// Setting the velocities using PID
   else
   {
   Flywheel_1.setVelocity(rpm1+proportional1 + integral1 + derivative1, rpm);
@@ -417,53 +420,21 @@ else {
   Intake.setVelocity(0,rpm);
 }
 
-//DRIVEBASE CODE DO NOT CHANGE
+//DRIVEBASE CODE
 
 Frontleft.setVelocity((Controller1.Axis4.position() + Controller1.Axis3.position() + Controller1.Axis1.position())/(2*0.68) ,percent);
-Backright.setVelocity((Controller1.Axis4.position() + Controller1.Axis3.position() + Controller1.Axis1.position())/(2*0.68),percent);
-Frontright.setVelocity((Controller1.Axis4.position() - Controller1.Axis3.position() - Controller1.Axis1.position())/(2*0.68),percent);
+Backright.setVelocity((Controller1.Axis4.position() + Controller1.Axis3.position() - Controller1.Axis1.position())/(2*0.68),percent);
+Frontright.setVelocity((Controller1.Axis4.position() - Controller1.Axis3.position() + Controller1.Axis1.position())/(2*0.68),percent);
 Backleft.setVelocity((Controller1.Axis4.position() - Controller1.Axis3.position() - Controller1.Axis1.position())/(2*0.68),percent);
 Frontright.spin(forward);
 Frontleft.spin(forward);
 Backright.spin(forward);
 Backleft.spin(forward);
     
-
-//     // turnleft
-// if (Controller1.Axis1.position() < 0) {
-
-//     Frontleft.setVelocity(100, percent);
-//     Frontright.setVelocity(100, percent);
-//     Backleft.setVelocity(100, percent);
-//     Backright.setVelocity(100, percent);
-//       Frontleft.spin(reverse);
-//       Frontright.spin(reverse);
-//       Backleft.spin(fwd);
-//       Backright.spin(forward);
-
-//     }
-
-//     //turnright
-
-//     else if (Controller1.Axis1.position() > 0) {
-    
-//     Frontleft.setVelocity(100, percent);
-//     Frontright.setVelocity(100, percent);
-//     Backleft.setVelocity(100, percent);
-//     Backright.setVelocity(100, percent);
-//      Frontleft.spin(fwd);
-//      Frontright.spin(forward);
-//      Backleft.spin(reverse);
-//      Backright.spin(reverse);
-//      }
- 
-//     };
-// wait(20, msec);
   }
    wait(20, msec);
 }
-  // wait(20, msec);
-    // wait(20, msec); // Sleep the task for a short amount of time to
+  // Sleep the task for a short amount of time to
                     // prevent wasted resources.
   
 
