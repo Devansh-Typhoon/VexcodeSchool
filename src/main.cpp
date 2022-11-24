@@ -305,7 +305,7 @@ void runflywheel() {
 void spincam() {
   if ((Flywheel_1.velocity(rpm)) > 400) {
   CAM.setVelocity(100, percent);
-  CAM.spinFor(forward,360,degrees);
+  CAM.spinFor(forward,1080,degrees);
 }
 }
    
