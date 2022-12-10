@@ -227,20 +227,19 @@ void strafebackleft(float degree) {
 }
 
 void autonomous(void) {
-  //Telling Flywheel to spin from the start
-  Flywheel_1.spin(forward);
-  Flywheel_1.setVelocity(95,percent);
-  Flywheel_2.spin(forward);
-  Flywheel_2.setVelocity(95,percent);
-
-
+  
   // Getting the roller
   driveforward(0.15);
   Intake.spinFor(forward,0.2,turns);
   drivebackward(0.15);
 
   // Waiting for Ramp up
+  Flywheel_1.spin(forward);
+  Flywheel_1.setVelocity(95,percent);
+  Flywheel_2.spin(forward);
+  Flywheel_2.setVelocity(95,percent);
   wait(1, sec);
+  rotateleft(0.11);
 
   // Actually shooting 2 discs
   CAM.setVelocity(100,percent);
@@ -249,9 +248,12 @@ void autonomous(void) {
   CAM.spinFor(forward,360,degrees);
   wait(1.5, sec);
 
-  // Preparing to go for discs
-  driveleft(2.5);
-  rotateleft(0.3);
+  //Going towards the other roller
+  rotateleft(0.4);
+  driveforward(4);
+  rotateright(0.1);
+  Intake.spinFor(forward,0.2,turns);
+
     
   
   
