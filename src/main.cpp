@@ -248,7 +248,7 @@ void autonomous(void) {
   CAM.spinFor(forward,360,degrees);
   wait(1.5, sec);
 
-  //Going towards the other roller
+  //Getting the other roller
   rotateleft(0.4);
   driveforward(4);
   rotateright(0.1);
