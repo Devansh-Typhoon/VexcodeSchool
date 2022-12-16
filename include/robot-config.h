@@ -9,7 +9,6 @@ extern motor Backleft;
 extern motor Backright;
 extern motor Intake;
 extern controller Controller1;
-extern motor Extension;
 extern motor CAM;
 extern motor Flywheel_1;
 extern motor Flywheel_2;

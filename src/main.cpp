@@ -1,3 +1,123 @@
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Frontleft            motor         1               
+// Frontright           motor         2               
+// Backleft             motor         3               
+// Backright            motor         4               
+// Intake               motor         8               
+// Controller1          controller                    
+// CAM                  motor         7               
+// Flywheel_1           motor         5               
+// Flywheel_2           motor         6               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Frontleft            motor         1               
+// Frontright           motor         2               
+// Backleft             motor         3               
+// Backright            motor         4               
+// Intake               motor         8               
+// Controller1          controller                    
+// CAM                  motor         11              
+// Flywheel_1           motor         5               
+// Flywheel_2           motor         6               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Frontleft            motor         1               
+// Frontright           motor         2               
+// Backleft             motor         3               
+// Backright            motor         4               
+// Intake               motor         10              
+// Controller1          controller                    
+// CAM                  motor         11              
+// Flywheel_1           motor         5               
+// Flywheel_2           motor         6               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Frontleft            motor         1               
+// Frontright           motor         2               
+// Backleft             motor         3               
+// Backright            motor         4               
+// Intake               motor         10              
+// Controller1          controller                    
+// CAM                  motor         11              
+// Flywheel_1           motor         5               
+// Flywheel_2           motor         18              
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Frontleft            motor         1               
+// Frontright           motor         2               
+// Backleft             motor         3               
+// Backright            motor         4               
+// Intake               motor         10              
+// Controller1          controller                    
+// CAM                  motor         11              
+// Flywheel_1           motor         13              
+// Flywheel_2           motor         18              
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Frontleft            motor         1               
+// Frontright           motor         2               
+// Backleft             motor         3               
+// Backright            motor         9               
+// Intake               motor         10              
+// Controller1          controller                    
+// CAM                  motor         11              
+// Flywheel_1           motor         13              
+// Flywheel_2           motor         18              
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Frontleft            motor         1               
+// Frontright           motor         2               
+// Backleft             motor         3               
+// Backright            motor         9               
+// Intake               motor         10              
+// Controller1          controller                    
+// Extension            motor         4               
+// CAM                  motor         11              
+// Flywheel_1           motor         13              
+// Flywheel_2           motor         18              
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Frontleft            motor         1               
+// Frontright           motor         2               
+// Backleft             motor         8               
+// Backright            motor         9               
+// Intake               motor         10              
+// Controller1          controller                    
+// Extension            motor         4               
+// CAM                  motor         11              
+// Flywheel_1           motor         13              
+// Flywheel_2           motor         18              
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Frontleft            motor         1               
+// Frontright           motor         6               
+// Backleft             motor         8               
+// Backright            motor         9               
+// Intake               motor         10              
+// Controller1          controller                    
+// Extension            motor         4               
+// CAM                  motor         11              
+// Flywheel_1           motor         13              
+// Flywheel_2           motor         18              
+// ---- END VEXCODE CONFIGURED DEVICES ----
 /*----------------------------------------------------------------------------*/    
 /*                                                                            */
 /*    Module:       main.cpp                                                  */
