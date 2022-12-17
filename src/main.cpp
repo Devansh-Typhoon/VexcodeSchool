@@ -10,6 +10,35 @@
 // CAM                  motor         7               
 // Flywheel_1           motor         5               
 // Flywheel_2           motor         6               
+// DigitalOutA          digital_out   A               
+// DigitalOutB          digital_out   B               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Frontleft            motor         1               
+// Frontright           motor         2               
+// Backleft             motor         3               
+// Backright            motor         4               
+// Intake               motor         8               
+// Controller1          controller                    
+// CAM                  motor         7               
+// Flywheel_1           motor         5               
+// Flywheel_2           motor         6               
+// DigitalOutA          digital_out   A               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// Frontleft            motor         1               
+// Frontright           motor         2               
+// Backleft             motor         3               
+// Backright            motor         4               
+// Intake               motor         8               
+// Controller1          controller                    
+// CAM                  motor         7               
+// Flywheel_1           motor         5               
+// Flywheel_2           motor         6               
 // ---- END VEXCODE CONFIGURED DEVICES ----
 // ---- START VEXCODE CONFIGURED DEVICES ----
 // Robot Configuration:
@@ -406,6 +435,9 @@ void autonomous(void) {
  float rpm1;
  float rpm2;
  int is_flywheel_running = 0;
+ int expansion_counter = 0;
+ int expansion_counter2 = 0;
+ 
 
 
 
@@ -424,23 +456,47 @@ void runflywheel() {
    }
 }
 
+// Cam function
 void spincam() {
   if ((Flywheel_1.velocity(rpm)) > 400) {
   CAM.setVelocity(100, percent);
   CAM.spinFor(forward,1080,degrees);
 }
 }
-   
 
+//Expansion Function   
+void expand1() {
+if (expansion_counter == 2) {
+DigitalOutA.set(true);
+expansion_counter = 0;
+}
+
+else if (expansion_counter != 2) {
+  DigitalOutA.set(false);
+}
+}
+
+void expand2() {
+if (expansion_counter2 == 2) {
+DigitalOutA.set(true);
+expansion_counter = 0;
+}
+
+else if (expansion_counter2 != 2) {
+  DigitalOutA.set(false);
+}
+}
 
 void usercontrol(void) {
   // User control code here, inside the loop
 
-  
+  Controller1.ButtonUp.pressed(expand1);
+  Controller1.ButtonDown.pressed(expand2);
   Controller1.ButtonR1.pressed(runflywheel);
   Controller1.ButtonR2.pressed(spincam);
 
 while (true) {
+
 if(is_flywheel_running==1 or is_flywheel_running==0) {
   //Flywheel Code
   //just trying to stop myself from writing the whole Flywheel_1.velocity(rpm) part
@@ -552,7 +608,17 @@ Frontright.spin(forward);
 Frontleft.spin(forward);
 Backright.spin(forward);
 Backleft.spin(forward);
-    
+
+//Early Expansion Prevention Parameters
+if (Controller1.ButtonUp.pressing()){
+expansion_counter = expansion_counter + 1;
+}
+
+if (Controller1.ButtonDown.pressing()){
+expansion_counter2 = expansion_counter2 + 1;
+}
+
+//End of Code   
   }
    wait(20, msec);
 }
